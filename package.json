@@ -4,11 +4,10 @@
   "description": "ES6 event class with on, once, off and emit methods",
   "main": "event-class-es6.js",
   "directories": {
-    "test": "test",
-    "packages": "jspm_packages"
+    "test": "test"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha --compilers js:babel-core/register test/test.js"
+    "test": "mocha --compilers js:babel-core/register test/test.js"
   },
   "keywords": [
     "event",
@@ -42,5 +41,14 @@
       "traceur": "github:jmcriffey/bower-traceur@0.0.93",
       "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.93"
     }
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonathanPicques/event-class-es6.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JonathanPicques/event-class-es6/issues"
+  },
+  "homepage": "https://github.com/JonathanPicques/event-class-es6#readme"
 }
