@@ -1,6 +1,6 @@
 {
   "name": "event-class-es6",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "ES6 event class with on, once, off and emit methods",
   "main": "event-class-es6.js",
   "directories": {
