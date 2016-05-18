@@ -28,7 +28,7 @@ export default class EventClass {
     once(event, listener) {
         let onceListener = () => {
             listener();
-            this[_listeners][event].splice(this[_listeners][event].lastIndexOf(onceListener), 1);
+            this.off(event, onceListener);
         };
         this.on(event, onceListener);
     }
@@ -43,7 +43,7 @@ export default class EventClass {
             if (typeof listener === "undefined") {
                 this[_listeners][event] = [];
             } else {
-                let listenerIndex = this[_listeners][event].indexOf(listener);
+                let listenerIndex = this[_listeners][event].lastIndexOf(listener);
                 if (listenerIndex !== -1) {
                     this[_listeners][event].splice(listenerIndex, 1);
                 }
