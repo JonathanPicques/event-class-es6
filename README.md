@@ -1,4 +1,4 @@
-event-class-es6
+event-class-es6 [![Build Status](https://travis-ci.org/JonathanPicques/event-class-es6.svg?branch=master)](https://travis-ci.org/JonathanPicques/event-class-es6)
 ===============
 
 event-class-es6 is an ES6 ``` module ``` providing event communication to ES6 classes.
