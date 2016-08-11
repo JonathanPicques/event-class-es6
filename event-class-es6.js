@@ -1,4 +1,4 @@
-let _listeners = Symbol("listeners");
+const _listeners = Symbol("listeners");
 
 export default class EventClass {
 
@@ -26,7 +26,7 @@ export default class EventClass {
      * @param {function} listener - the callback called once when the given event is emitted
      */
     once(event, listener) {
-        let onceListener = () => {
+        const onceListener = () => {
             listener();
             this.off(event, onceListener);
         };
@@ -43,7 +43,7 @@ export default class EventClass {
             if (typeof listener === "undefined") {
                 this[_listeners][event] = [];
             } else {
-                let listenerIndex = this[_listeners][event].lastIndexOf(listener);
+                const listenerIndex = this[_listeners][event].lastIndexOf(listener);
                 if (listenerIndex !== -1) {
                     this[_listeners][event].splice(listenerIndex, 1);
                 }
@@ -57,10 +57,10 @@ export default class EventClass {
      * @param {...*} arguments - all listeners to this event will be notified with the given arguments
      */
     emit(event) {
-        let listeners = this[_listeners][event];
+        const listeners = this[_listeners][event];
         if (typeof listeners !== "undefined") {
-            for (let i = 0; i < listeners.length; i++) {
-                listeners[i].apply(this, Array.prototype.slice.call(arguments, 1));
+            for (const listener of listeners) {
+                listener.apply(this, Array.prototype.slice.call(arguments, 1));
             }
         }
     }
