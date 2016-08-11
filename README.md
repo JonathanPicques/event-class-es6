@@ -18,9 +18,9 @@ import EventClass from "event-class-es6"
 
 class EventTest extends EventClass {}
 
-let event = new EventTest();
+const event = new EventTest();
 
-let cb = event.on("event-on", () => {
+const cb = event.on("event-on", () => {
     console.log("I've been called");
 });
 
