@@ -1,6 +1,6 @@
 {
   "name": "event-class-es6",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "ES6 event class with on, once, off and emit methods",
   "main": "event-class-es6.js",
   "jsnext:main": "event-class-es6.js",
