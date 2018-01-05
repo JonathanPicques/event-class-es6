@@ -1,5 +1,9 @@
 const _listeners = Symbol("listeners");
 
+/**
+ * Use or extend this class to trigger and listen to events
+ * @class
+ */
 export default class EventClass {
 
     constructor() {
@@ -27,8 +31,8 @@ export default class EventClass {
      */
     once(event, listener) {
         const onceListener = () => {
-            listener();
             this.off(event, onceListener);
+            listener();
         };
         this.on(event, onceListener);
     }
@@ -54,13 +58,13 @@ export default class EventClass {
     /**
      * Emits an event
      * @param {string} event - all listeners to this event will be notified
-     * @param {...*} arguments - all listeners to this event will be notified with the given arguments
+     * @param {...*} args - all listeners to this event will be notified with the given arguments
      */
-    emit(event) {
+    emit(event, ...args) {
         const listeners = this[_listeners][event];
         if (typeof listeners !== "undefined") {
             for (const listener of listeners) {
-                listener.apply(this, Array.prototype.slice.call(arguments, 1));
+                listener.call(this, ...args);
             }
         }
     }
