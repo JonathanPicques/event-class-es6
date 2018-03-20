@@ -2,7 +2,7 @@
  * Use or extend this class to trigger and listen to events
  * @class
  */
-declare class EventClass {
+export default class EventClass {
 
     public constructor();
 
